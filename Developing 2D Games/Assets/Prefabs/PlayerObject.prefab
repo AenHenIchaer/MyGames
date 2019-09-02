@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 7318747333096768457}
   - component: {fileID: 7318747333096768456}
   - component: {fileID: 7318747333096768455}
+  - component: {fileID: 5765894672303848550}
+  - component: {fileID: 2181044987480710822}
   m_Layer: 8
   m_Name: PlayerObject
   m_TagString: Player
@@ -143,10 +145,40 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &5765894672303848550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7318747333096768453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ad590273e7e8104f89baa538a5f0ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoints: {fileID: 11400000, guid: 327f9cea5fbd9fd47aaa63e73ead1147, type: 2}
+  startingHitPoints: 20
+  maxHitPoints: 100
+  characterCategory: 0
+  healthBarPrefab: {fileID: 0}
+--- !u!114 &2181044987480710822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7318747333096768453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76669d2596a18004aa11bda59b566fb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 3

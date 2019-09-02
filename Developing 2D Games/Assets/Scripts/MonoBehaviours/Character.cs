@@ -1,10 +1,8 @@
+using System.Collections;
 using UnityEngine;
 
 public abstract class Character : MonoBehaviour
 {
-
-    public HitPoints hitPoints;
-
     public float startingHitPoints;
     public float maxHitPoints;
 
@@ -15,4 +13,12 @@ public abstract class Character : MonoBehaviour
     }
 
     public CharacterCategory characterCategory;
+
+    public virtual void KillCharacter()
+    {
+        Destroy(gameObject);
+    }
+    public abstract void ResetCharacter();
+    public abstract IEnumerator DamageCharacter(int damage, float interval);
 }
+

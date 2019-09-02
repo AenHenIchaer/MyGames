@@ -40,7 +40,7 @@ public class Inventory : MonoBehaviour
                 // Adding to existing slot
                 items[i].quantity = items[i].quantity + 1;
                 Slot slotScript = slots[i].GetComponent<Slot>();
-                Text quantityText = slotScript.qtyText;
+                Text quantityText = slotScript.QtyText;
                 quantityText.enabled = true;
                 quantityText.text = items[i].quantity.ToString();
                 return true;

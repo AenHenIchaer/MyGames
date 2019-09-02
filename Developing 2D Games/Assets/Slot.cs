@@ -3,5 +3,5 @@ using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
 {
-    public Text qtyText;
+    public Text QtyText;
 }
