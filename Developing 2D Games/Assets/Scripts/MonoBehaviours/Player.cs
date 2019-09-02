@@ -2,7 +2,7 @@
 
 public class Player : Character
 {
-    public Inventory inventoryPrefab;
+    public Inventory slotPrefab;
     Inventory inventory;
 
     public HealthBar healthBarPrefab;
@@ -11,7 +11,7 @@ public class Player : Character
     public void Start()
     {
         hitPoints.value = startingHitPoints;
-        inventory = Instantiate(inventoryPrefab);
+        inventory = Instantiate(slotPrefab);
         healthBar = Instantiate(healthBarPrefab);
         healthBar.character = this;
     }
