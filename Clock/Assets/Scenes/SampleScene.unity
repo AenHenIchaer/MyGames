@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 339403437}
   - component: {fileID: 339403436}
   - component: {fileID: 339403435}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hour Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,9 +221,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 563425208}
-  m_Layer: 0
+  - component: {fileID: 563425209}
+  - component: {fileID: 563425210}
+  m_Layer: 9
   m_Name: Clock
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,7 +238,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563425207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.92, y: 0, z: 0.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2136429942}
@@ -255,9 +257,75 @@ Transform:
   - {fileID: 1190392373}
   - {fileID: 1864224966}
   - {fileID: 2048791255}
+  - {fileID: 963194228}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &563425209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563425207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b9c08c6067851f4a96e30ad16bdf9dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoursTransform: {fileID: 1190392373}
+  minutesTransform: {fileID: 1864224966}
+  secondsTransform: {fileID: 2048791255}
+  continuous: 1
+--- !u!212 &563425210
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563425207}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +429,7 @@ GameObject:
   - component: {fileID: 740992428}
   - component: {fileID: 740992427}
   - component: {fileID: 740992426}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hour Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +521,7 @@ GameObject:
   - component: {fileID: 780877697}
   - component: {fileID: 780877696}
   - component: {fileID: 780877695}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hour Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +613,7 @@ GameObject:
   - component: {fileID: 801932823}
   - component: {fileID: 801932822}
   - component: {fileID: 801932821}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hour Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -637,7 +705,7 @@ GameObject:
   - component: {fileID: 946585835}
   - component: {fileID: 946585834}
   - component: {fileID: 946585833}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -793,13 +861,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: -0.74492705, y: -0.009594367, z: -0.005762428, w: -0.6670521}
+  m_LocalPosition: {x: 0, y: 16, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 563425208}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 96.435, y: -11, z: 348.68903}
 --- !u!1 &1036491587
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,7 +880,7 @@ GameObject:
   - component: {fileID: 1036491591}
   - component: {fileID: 1036491590}
   - component: {fileID: 1036491589}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hour Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -904,7 +972,7 @@ GameObject:
   - component: {fileID: 1048804650}
   - component: {fileID: 1048804649}
   - component: {fileID: 1048804648}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hour Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -996,7 +1064,7 @@ GameObject:
   - component: {fileID: 1066796779}
   - component: {fileID: 1066796778}
   - component: {fileID: 1066796777}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1085,7 +1153,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1190392373}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hours Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1119,7 +1187,7 @@ GameObject:
   - component: {fileID: 1241841981}
   - component: {fileID: 1241841980}
   - component: {fileID: 1241841979}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hour Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1211,7 +1279,7 @@ GameObject:
   - component: {fileID: 1279798082}
   - component: {fileID: 1279798081}
   - component: {fileID: 1279798080}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hour Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1291,6 +1359,99 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1279798078}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1361218877
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1361218878}
+  - component: {fileID: 1361218881}
+  - component: {fileID: 1361218880}
+  - component: {fileID: 1361218879}
+  m_Layer: 0
+  m_Name: Quad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1361218878
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361218877}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1.34}
+  m_LocalScale: {x: 3, y: 1, z: 2}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!64 &1361218879
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361218877}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1361218880
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361218877}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 5cceac8456cde954a846a00dc1d6d270, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1361218881
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361218877}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1499496882
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,7 +1464,7 @@ GameObject:
   - component: {fileID: 1499496886}
   - component: {fileID: 1499496885}
   - component: {fileID: 1499496884}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hour Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1395,7 +1556,7 @@ GameObject:
   - component: {fileID: 1574751151}
   - component: {fileID: 1574751150}
   - component: {fileID: 1574751149}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1487,7 +1648,7 @@ GameObject:
   - component: {fileID: 1614322655}
   - component: {fileID: 1614322654}
   - component: {fileID: 1614322653}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hour Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1576,7 +1737,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1864224966}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Minutes Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1610,7 +1771,7 @@ GameObject:
   - component: {fileID: 1968984514}
   - component: {fileID: 1968984513}
   - component: {fileID: 1968984512}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hour Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1699,7 +1860,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2048791255}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seconds Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1733,7 +1894,7 @@ GameObject:
   - component: {fileID: 2076526106}
   - component: {fileID: 2076526105}
   - component: {fileID: 2076526104}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hour Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1824,7 +1985,7 @@ GameObject:
   - component: {fileID: 2136429942}
   - component: {fileID: 2136429944}
   - component: {fileID: 2136429943}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1838,13 +1999,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136429941}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 0.1, z: 10}
   m_Children: []
   m_Father: {fileID: 563425208}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!23 &2136429943
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1862,7 +2023,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 556ba291e5e21f84e940ee97971a154a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
