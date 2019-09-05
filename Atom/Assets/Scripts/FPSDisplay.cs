@@ -21,6 +21,14 @@ public class FPSDisplay : MonoBehaviour
   
     public Text highestFPSLabel, averageFPSLabel, lowestFPSLabel;
     FPSCounter fpsCounter;
+    [System.Serializable]
+    private struct FPSColor
+    {
+        public Color color;
+        public int minimumFPS;
+    }
+    [SerializeField]
+    private FPSColor[] coloring;
     private void Awake()
     {
         fpsCounter = GetComponent<FPSCounter>();
@@ -34,12 +42,21 @@ public class FPSDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
-        highestFPSLabel.text =
-        stringsFrom00To99[Mathf.Clamp(fpsCounter.HighestFPS, 0, 99)];
-        averageFPSLabel.text =
-            stringsFrom00To99[Mathf.Clamp(fpsCounter.AverageFPS, 0, 99)];
-        lowestFPSLabel.text =
-            stringsFrom00To99[Mathf.Clamp(fpsCounter.LowestFPS, 0, 99)];
+        Display(highestFPSLabel, fpsCounter.HighestFPS);
+        Display(averageFPSLabel, fpsCounter.AverageFPS);
+        Display(lowestFPSLabel, fpsCounter.LowestFPS);
+    }
+    void Display(Text label, int fps)
+    {
+        label.text = stringsFrom00To99[Mathf.Clamp(fps, 0, 99)];
+        for (int i = 0; i < coloring.Length; i++)
+        {
+            if (fps >= coloring[i].minimumFPS)
+            {
+                label.color = coloring[i].color;
+                break;
+            }
+        }
     }
 }
+
