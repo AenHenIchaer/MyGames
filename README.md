@@ -1,2 +1,2 @@
 # MyGames
-Creating my own games
+Creating elements of the gameplay
