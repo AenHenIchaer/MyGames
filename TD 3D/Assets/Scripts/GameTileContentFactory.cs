@@ -1,23 +1,36 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[CreateAssetMenu]
 
+[CreateAssetMenu]
 public class GameTileContentFactory : ScriptableObject
 {
+    public enum GameTileContentType
+    {
+        Empty, Destination
+    }
+    public GameTileContent Get(GameTileContentType type)
+    {
+        switch (type)
+        {
+            case GameTileContentType.Destination: return Get(destinationPrefab);
+            case GameTileContentType.Empty: return Get(emptyPrefab);
+        }
+        Debug.Assert(false, "Unsupported type: " + type);
+        return null;
+    }
+    Scene contentScene;
     [SerializeField]
     GameTileContent destinationPrefab = default;
 
     [SerializeField]
     GameTileContent emptyPrefab = default;
-    Scene contentScene;
-
-
     public void Reclaim(GameTileContent content)
     {
         Debug.Assert(content.OriginFactory == this, "Wrong factory reclaimed!");
         Destroy(content.gameObject);
     }
+
     GameTileContent Get(GameTileContent prefab)
     {
         GameTileContent instance = Instantiate(prefab);
@@ -44,7 +57,7 @@ public class GameTileContentFactory : ScriptableObject
         }
         SceneManager.MoveGameObjectToScene(o, contentScene);
     }
-    [SerializeField]
-    GameTileContentFactory tileContentFactory = default;
+
+
 
 }
