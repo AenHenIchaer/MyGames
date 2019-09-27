@@ -7,7 +7,7 @@ public class Graph : MonoBehaviour
     public Transform pointPrefab;
     
     [Range(10,100)]public int resolution = 10;
-    public GraphFunctionName function
+    public GraphFunctionName function;
     
     public int function;
     void Awake()
