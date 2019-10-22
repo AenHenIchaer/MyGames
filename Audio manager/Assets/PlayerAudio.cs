@@ -9,6 +9,9 @@ public class PlayerAudio : MonoBehaviour
     public AudioSource audioS;
     public AudioMixerSnapshot idleSnapshot;
     public AudioMixerSnapshot auxInSnapshot;
+    public AudioClip[] grassSteps;
+    public AudioClip[] woodsteps;
+    public AudioClip[] hardsteps;
     
     public LayerMask enemyMask;
     bool enemyNear;
@@ -18,18 +21,52 @@ public class PlayerAudio : MonoBehaviour
         RaycastHit[] hits = Physics.SphereCastAll(transform.position, 5f, transform.forward, 0f, enemyMask);
         if (hits.Length > 0)
         {
-            if (!enemyNear)
-            {
-                Debug.Log(hits[0].transform.name);
-                Debug.Log("Set enemy near");
-                auxInSnapshot.TransitionTo(0.5f);
-                enemyNear = true;
-            }
+            enemyNear = true;
         }
         else
-            if (enemyNear)
         {
             enemyNear = false;
+        }
+        if (!AudioManager.Manager.eventRunning)
+        {
+
+
+            if (enemyNear)
+            {
+                if (!AudioManager.Manager.auxIn)
+                {
+                    auxInSnapshot.TransitionTo(0.5f);
+                    AudioManager.Manager.currentAudioMixerSnapshot = auxInSnapshot;
+                    AudioManager.Manager.auxIn = true;
+                }
+                else
+                {
+                    if (AudioManager.Manager.currentAudioMixerSnapshot==AudioManager.Manager.eventSnap)
+                    {
+                        auxInSnapshot.TransitionTo(0.5f);
+                        AudioManager.Manager.currentAudioMixerSnapshot = auxInSnapshot;
+                        AudioManager.Manager.auxIn = true;
+                    }
+                }
+            }
+            else
+            {
+                if (AudioManager.Manager.auxIn)
+                {
+                    idleSnapshot.TransitionTo(0.5f);
+                    AudioManager.Manager.currentAudioMixerSnapshot = idleSnapshot;
+                    AudioManager.Manager.auxIn = false;
+                }
+                else
+                {
+                    if (AudioManager.Manager.currentAudioMixerSnapshot == AudioManager.Manager.eventSnap)
+                    {
+                        idleSnapshot.TransitionTo(0.5f);
+                        AudioManager.Manager.currentAudioMixerSnapshot = idleSnapshot;
+                        AudioManager.Manager.auxIn = false;
+                    }
+                }
+            }
         }
     }
 
@@ -54,6 +91,31 @@ public class PlayerAudio : MonoBehaviour
         if (other.CompareTag("EnemyZone"))
         {
             idleSnapshot.TransitionTo(0.5f);
+        }
+    }
+    public void Footsteps()
+    {
+        RaycastHit hit;
+        Ray ray = new Ray(transform.position, -transform.up);
+        int r = Random.Range(0, 3);
+        if (Physics.Raycast(ray, out hit, 1f))
+        {
+            switch (hit.transform.tag)
+            {
+                case "WoodFloor":
+                    audioS.PlayOneShot(woodsteps[r]);
+                    break;
+                case "HardFloor":
+                    audioS.PlayOneShot(hardsteps[r]);
+                    break;
+                case "GrassFloor":
+                    audioS.PlayOneShot(grassSteps[r]);
+                    break;
+                default:
+                    audioS.PlayOneShot(grassSteps[r]);
+
+                    break;
+            }
         }
     }
 }
