@@ -61,7 +61,7 @@ namespace GameServices
         }
         public void DisplayRewardedAd()
         {
-            StartCoroutine(WaitAndDisplayRewardedAd);
+            StartCoroutine(WaitAndDisplayRewardedAd());
 
         }
 
