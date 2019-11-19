@@ -6,7 +6,6 @@ namespace GameServices
 {
     public interface IService
     {
-        void Initizalize();     
+        void Initialize();
     }
 }
-
